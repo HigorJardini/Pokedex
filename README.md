@@ -15,6 +15,6 @@
 ### How to use the pokedex:
 ![alt text](https://i.imgur.com/D45CHm8.gif)
 
-###### Version:
+###### Versions:
 - v1 - Base Project from pokedex
 - v2 - Pokedex with sounds from pokeballs and "easter egg"!
