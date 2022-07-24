@@ -10,6 +10,8 @@ const input         = document.querySelector('.input__search');
 const btnPrev       = document.querySelector('.btn-prev');
 const btnNext       = document.querySelector('.btn-next');
 
+const btns          = document.querySelector('.button');
+
 const imgDefault    = './imagens/pokeball.gif';
 
 let searchPokemon = 0;
@@ -32,6 +34,9 @@ const renderPokemon = async (pokemon) => {
     pokemonId.innerHTML   = '';
     pokemonTitle.classList.add('d-none');
     pokemonName.innerHTML = 'Loading...';
+    buttonsActionsPermission('disabled');
+
+    console.log(btns);
 
     const data = await fetchPokemon(pokemon);
 
@@ -48,7 +53,9 @@ const renderPokemon = async (pokemon) => {
         } else {
            pokemonImg.src = data['sprites']['versions']['generation-v']['black-white']['front_default'];
         }
-        
+
+        playaudio(data.id);
+
     } else {
         pokemonName.innerHTML = 'Not Found';
         pokemonId.innerHTML   = '';
@@ -58,8 +65,28 @@ const renderPokemon = async (pokemon) => {
 
         searchPokemon = 0;
     }
-    
+
+    buttonsActionsPermission('enable');
     input.value = '';
+}
+
+const playaudio = (id_pokemon) => {
+
+    if(id_pokemon == 25){
+        var audio = new Audio('../sounds/pikachu.mp3');
+    } else {
+        var audio = new Audio('../sounds/pokeball.mp3');
+    }
+    
+    audio.volume = 0.2;
+    audio.play();
+}
+
+const buttonsActionsPermission = (value) => {
+    const buttons = document.getElementsByTagName("button");
+    for (const button of buttons) {
+        button.disabled =  value == 'disabled'? true : false;
+    }
 }
 
 form.addEventListener('submit', (event) => {
@@ -80,4 +107,5 @@ btnNext.addEventListener('click', () => {
     searchPokemon += 1;
     renderPokemon(searchPokemon);
 });
+
 
