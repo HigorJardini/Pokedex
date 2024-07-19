@@ -2,6 +2,8 @@
 
 ## Use to search your favorite pokemon!
 
+[Link](https://higorjardini.github.io/Pokedex/) - Explore the Online Pokédex
+
 ### Below the Pokedex Content Description
 
 ##### The input accept two examples to search pokemons, they are:
