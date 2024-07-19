@@ -2,7 +2,7 @@
 
 ## Use to search your favorite pokemon!
 
-[Link](https://higorjardini.github.io/Pokedex/) - Explore the Online Pokédex
+<a href="https://higorjardini.github.io/Pokedex/" target="_blank"> Link </a> - Explore the Online Pokédex
 
 ### Below the Pokedex Content Description
 
